@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joint Care – Regenerativní medicína | Neoperační léčba bolesti kloubů | Praha &amp; Zlín</title>
+<meta name="description" content="Joint Care – specializovaná klinika regenerativní medicíny. Neoperační léčba bolesti kloubů a pohybového aparátu. Ultrazvukem navigovaná aplikace kyseliny hyaluronové. Praha | Zlín.">
+<style>
+  :root{
+    --primary:#0e6e63;
+    --primary-dark:#0a544c;
+    --primary-light:#e6f4f2;
+    --accent:#e8a33d;
+    --accent-dark:#c9861f;
+    --ink:#1d2a2e;
+    --muted:#5a6b70;
+    --bg:#fbfcfc;
+    --card:#ffffff;
+    --line:#e3ebea;
+    --radius:14px;
+    --shadow:0 6px 24px rgba(14,110,99,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  img{max-width:100%}
+  a{color:var(--primary)}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ===== Header ===== */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.25rem;letter-spacing:.2px}
+  .logo-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#149a8a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem}
+  .logo span em{font-style:normal;color:var(--primary)}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem;transition:color .2s}
+  nav a:hover{color:var(--primary)}
+  .btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-size:1rem}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(232,163,61,.35)}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+  .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+  .btn-outline:hover{background:var(--primary);color:#fff}
+  .btn-lg{padding:16px 36px;font-size:1.1rem}
+  .nav .btn{padding:10px 22px;font-size:.95rem}
+  .nav-toggle{display:none}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(160deg,var(--primary-light) 0%,#f4faf9 55%,#fff 100%);padding:84px 0 72px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(14,110,99,.10),transparent 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+  .eyebrow{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--primary);font-weight:600;font-size:.85rem;padding:6px 16px;border-radius:999px;margin-bottom:20px;letter-spacing:.4px}
+  h1{font-size:2.9rem;line-height:1.15;font-weight:800;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--primary)}
+  .hero p.lead{font-size:1.2rem;color:var(--muted);margin-bottom:32px;max-width:560px}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero-note{margin-top:18px;font-size:.9rem;color:var(--muted)}
+  .hero-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px;border:1px solid var(--line)}
+  .hero-card h3{color:var(--primary);margin-bottom:14px;font-size:1.05rem;text-transform:uppercase;letter-spacing:.6px}
+  .hero-card ul{list-style:none}
+  .hero-card li{padding:10px 0;border-bottom:1px dashed var(--line);display:flex;gap:12px;align-items:flex-start}
+  .hero-card li:last-child{border-bottom:none}
+  .check{color:var(--primary);font-weight:700;flex-shrink:0}
+
+  /* ===== Sections ===== */
+  section{padding:76px 0}
+  section.alt{background:#f3f8f7}
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 48px}
+  .sec-head h2{font-size:2.1rem;font-weight:800;margin-bottom:14px}
+  .sec-head h2 em{font-style:normal;color:var(--primary)}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:0 2px 10px rgba(14,110,99,.05);transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .card .icon{width:52px;height:52px;border-radius:12px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px}
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* ===== Steps / cesta pacienta ===== */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;position:relative}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;top:-18px;left:24px;width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 4px 10px rgba(14,110,99,.3)}
+  .step h3{margin:14px 0 8px;font-size:1.05rem}
+  .step p{color:var(--muted);font-size:.93rem}
+
+  /* ===== Ceník ===== */
+  .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:820px;margin:0 auto}
+  .price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:36px 32px;text-align:center;position:relative}
+  .price-card.featured{border:2px solid var(--primary);box-shadow:var(--shadow)}
+  .price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:.5px;text-transform:uppercase}
+  .price-card h3{font-size:1.2rem;margin-bottom:8px}
+  .price{font-size:2.6rem;font-weight:800;color:var(--primary);margin:14px 0 4px}
+  .price small{font-size:1rem;color:var(--muted);font-weight:500}
+  .price-card ul{list-style:none;margin:20px 0 26px;text-align:left}
+  .price-card li{padding:8px 0;border-bottom:1px dashed var(--line);color:var(--muted);font-size:.95rem;display:flex;gap:10px}
+  .price-card li:last-child{border-bottom:none}
+  .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:26px;max-width:640px;margin-left:auto;margin-right:auto}
+
+  /* ===== Pobočky ===== */
+  .place h3{display:flex;align-items:center;gap:10px;font-size:1.3rem;margin-bottom:12px;color:var(--primary)}
+  .place p{color:var(--muted);margin-bottom:8px}
+  .place .todo{font-size:.85rem;color:#a68a2c;background:#fdf6e3;border:1px dashed #e5d48f;border-radius:8px;padding:8px 12px;display:inline-block;margin-top:8px}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:820px;margin:0 auto}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+  summary{padding:18px 24px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;color:var(--primary);font-weight:400;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details .faq-body{padding:0 24px 20px;color:var(--muted);font-size:.97rem}
+
+  /* ===== CTA band ===== */
+  .cta-band{background:linear-gradient(135deg,var(--primary),#12897a);color:#fff;text-align:center;border-radius:20px;padding:56px 40px;box-shadow:var(--shadow)}
+  .cta-band h2{font-size:2rem;margin-bottom:14px}
+  .cta-band p{opacity:.92;margin-bottom:30px;font-size:1.1rem;max-width:640px;margin-left:auto;margin-right:auto}
+  .cta-band .btn-primary{background:#fff;color:var(--primary);box-shadow:0 4px 14px rgba(0,0,0,.15)}
+  .cta-band .btn-primary:hover{background:#f2f2f2}
+  .cta-band .sub{font-size:.9rem;opacity:.8;margin-top:16px;margin-bottom:0}
+
+  /* ===== Footer ===== */
+  footer{background:#10201e;color:#b8c9c6;padding:56px 0 32px;margin-top:76px}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  footer h4{color:#fff;margin-bottom:14px;font-size:1rem}
+  footer a{color:#b8c9c6;text-decoration:none}
+  footer a:hover{color:#fff}
+  footer ul{list-style:none}
+  footer li{padding:5px 0;font-size:.93rem}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .disclaimer{font-size:.82rem;color:#8fa5a1;margin-top:14px;max-width:560px}
+
+  /* ===== Responsive ===== */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    h1{font-size:2.3rem}
+  }
+  @media(max-width:640px){
+    nav ul{display:none}
+    .grid-3,.grid-2,.steps,.price-grid,.foot-grid{grid-template-columns:1fr}
+    h1{font-size:1.9rem}
+    section{padding:56px 0}
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">
+      <div class="logo-mark">✚</div>
+      <span>Joint&nbsp;<em>Care</em></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#sluzba">Léčba</a></li>
+        <li><a href="#prubeh">Jak to probíhá</a></li>
+        <li><a href="#cenik">Ceník</a></li>
+        <li><a href="#pobocky">Pobočky</a></li>
+        <li><a href="#faq">Časté dotazy</a></li>
+        <li><a class="btn btn-primary" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a></li>
+        <li><a class="btn btn-outline" href="#pobocky">Objednat</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Klinika regenerativní medicíny · Praha | Zlín</span>
+        <h1>Bolest kloubů se dá řešit <em>bez operace</em></h1>
+        <p class="lead">Joint Care je specializovaná klinika regenerativní medicíny zaměřená na neoperační léčbu bolesti pohybového aparátu. Přesná diagnostika a šetrné, ultrazvukem navigované ošetření kloubů, šlach a měkkých tkání.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a>
+          <a class="btn btn-outline btn-lg" href="#pobocky">Objednat</a>
+          <a class="btn btn-outline btn-lg" href="#sluzba">Více o léčbě</a>
+        </div>
+        <p class="hero-note">Objednání zabere 2 minuty · vstupní konzultace se zálohou 500 Kč</p>
+      </div>
+      <div class="hero-card">
+        <h3>Proč Joint Care</h3>
+        <ul>
+          <li><span class="check">✓</span> Individuální léčebný plán od zkušených lékařů</li>
+          <li><span class="check">✓</span> Ultrazvukem navigovaná aplikace – přesně do postiženého místa</li>
+          <li><span class="check">✓</span> Ambulantní ošetření, odchod bez omezení běžného režimu</li>
+          <li><span class="check">✓</span> Cíl: zmírnit bolest, zlepšit hybnost, oddálit operaci</li>
+          <li><span class="check">✓</span> Dvě pobočky – Praha a Zlín</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLUŽBA -->
+  <section id="sluzba">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Neoperační léčba <em>pohybového aparátu</em></h2>
+        <p>Metody regenerativní medicíny pomáhají tam, kde běžná léčba nestačí a operace je zatím zbytečně velký krok.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🔍</div>
+          <h3>Přesná diagnostika</h3>
+          <p>Vstupní konzultace s lékařem, zhodnocení vašich obtíží i dostupných vyšetření (RTG, MRI, sono). Společně určíme, zda je pro vás léčba vhodná.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💉</div>
+          <h3>Navigovaná aplikace kyseliny hyaluronové</h3>
+          <p>Aplikace pod ultrazvukovou kontrolou přímo do postiženého kloubu – koleno, kyčel, rameno a další. Přesně, šetrně a s maximálním účinkem.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🦵</div>
+          <h3>Dlouhodobá péče o klouby</h3>
+          <p>Následné kontroly, doporučení pohybového režimu a individuální plán, aby úleva od bolesti vydržela co nejdéle.</p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:28px">
+        <div class="card">
+          <div class="icon">🏃</div>
+          <h3>Pro koho je léčba vhodná</h3>
+          <p>Pacienti s artrózou, chronickou bolestí kloubů nebo přetížením ze sportu či práce, kteří chtějí odsunout nebo zcela nahradit operační řešení.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⏱️</div>
+          <h3>Rychlé a ambulantní</h3>
+          <p>Ošetření trvá krátce, probíhá ambulantně a odcházíte bez omezení běžného denního režimu.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🩺</div>
+          <h3>Vedeno lékaři</h3>
+          <p>Každý krok léčby vede zkušený lékař. O vhodnosti a průběhu léčby rozhodujeme vždy individuálně po vyšetření.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRŮBĚH -->
+  <section id="prubeh" class="alt">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Jak léčba <em>probíhá</em></h2>
+        <p>Od první objednávky po úlevu od bolesti ve čtyřech krocích.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Objednání online</h3>
+          <p>Vyplňte krátkou žádost o ošetření. Ozveme se vám, potvrdíme termín a pošleme pokyny k záloze 500 Kč.</p>
+        </div>
+        <div class="step">
+          <h3>Vstupní konzultace</h3>
+          <p>Lékař zhodnotí vaše obtíže a dostupná vyšetření a navrhne individuální léčebný plán.</p>
+        </div>
+        <div class="step">
+          <h3>Aplikace</h3>
+          <p>Ultrazvukem navigovaná aplikace kyseliny hyaluronové přímo do postiženého kloubu. Krátký ambulantní výkon.</p>
+        </div>
+        <div class="step">
+          <h3>Kontrola a další péče</h3>
+          <p>Zhodnotíme účinek léčby, doporučíme režim a naplánujeme případné další kroky.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:44px">
+        <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a>
+        <a class="btn btn-outline btn-lg" style="margin-left:12px" href="#pobocky">Objednat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENÍK -->
+  <section id="cenik">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Ceník</h2>
+        <p>Transparentní ceny bez skrytých poplatků.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Vstupní konzultace</h3>
+          <div class="price">500&nbsp;Kč <small>záloha</small></div>
+          <ul>
+            <li><span class="check">✓</span> Vyšetření a konzultace s lékařem</li>
+            <li><span class="check">✓</span> Zhodnocení dostupných vyšetření</li>
+            <li><span class="check">✓</span> Návrh individuálního léčebného plánu</li>
+            <li><span class="check">✓</span> Záloha se započítává do ceny léčby</li>
+          </ul>
+          <a class="btn btn-outline" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a>
+        </div>
+        <div class="price-card featured">
+          <span class="price-badge">Hlavní výkon</span>
+          <h3>Aplikace kyseliny hyaluronové</h3>
+          <div class="price">4&nbsp;990&nbsp;Kč</div>
+          <ul>
+            <li><span class="check">✓</span> Ultrazvukem navigovaná aplikace</li>
+            <li><span class="check">✓</span> Koleno, kyčel, rameno a další klouby</li>
+            <li><span class="check">✓</span> Krátký ambulantní výkon</li>
+            <li><span class="check">✓</span> Bez omezení běžného režimu po výkonu</li>
+          </ul>
+          <a class="btn btn-primary" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a>
+        </div>
+      </div>
+      <p class="price-note">O vhodnosti a přesném rozsahu léčby rozhoduje vždy lékař na vstupní konzultaci. Počet aplikací je individuální podle stavu kloubu a léčebného plánu.</p>
+    </div>
+  </section>
+
+  <!-- POBOČKY -->
+  <section id="pobocky" class="alt">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Naše <em>pobočky</em></h2>
+        <p>Najdete nás ve dvou městech. Termín na konkrétní pobočce si vyberete přímo v online kalendáři.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card place">
+          <h3>📍 Joint Care Praha</h3>
+          <p><strong>Adresa:</strong> bude doplněno</p>
+          <p><strong>Telefon:</strong> bude doplněno · <strong>E‑mail:</strong> bude doplněno</p>
+          <p><strong>Ordinační hodiny:</strong> dle online kalendáře</p>
+          <a class="btn btn-outline" style="margin-top:10px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e002&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e005" target="_blank" rel="noopener">Objednat v Praze</a>
+        </div>
+        <div class="card place">
+          <h3>📍 Joint Care Zlín</h3>
+          <p><strong>Adresa:</strong> bude doplněno</p>
+          <p><strong>Telefon:</strong> bude doplněno · <strong>E‑mail:</strong> bude doplněno</p>
+          <p><strong>Ordinační hodiny:</strong> dle online kalendáře</p>
+          <a class="btn btn-outline" style="margin-top:10px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e003&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006" target="_blank" rel="noopener">Objednat ve Zlíně</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Časté dotazy</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Je aplikace kyseliny hyaluronové bolestivá?</summary>
+          <div class="faq-body">Aplikace probíhá pod ultrazvukovou kontrolou tenkou jehlou přímo do postiženého místa. Většina pacientů ji popisuje jako krátké píchnutí srovnatelné s běžnou injekcí. Výkon trvá jen několik minut.</div>
+        </details>
+        <details>
+          <summary>Potřebuji doporučení od svého lékaře?</summary>
+          <div class="faq-body">Ne, doporučení není potřeba. Stačí se objednat na vstupní konzultaci. Pokud máte k dispozici výsledky dřívějších vyšetření (RTG, MRI, sono), vezměte je prosím s sebou – pomohou lékaři při plánování léčby.</div>
+        </details>
+        <details>
+          <summary>Hradí léčbu zdravotní pojišťovna?</summary>
+          <div class="faq-body">Léčba je hrazena přímo pacientem podle platného ceníku. Aktuální ceny najdete v sekci Ceník.</div>
+        </details>
+        <details>
+          <summary>K čemu slouží záloha 500 Kč?</summary>
+          <div class="faq-body">Záloha rezervuje váš termín vstupní konzultace a započítává se do ceny léčby. Pokyny k úhradě obdržíte v potvrzovacím e‑mailu po objednání.</div>
+        </details>
+        <details>
+          <summary>Jak dlouho účinek léčby vydrží?</summary>
+          <div class="faq-body">Délka účinku je individuální a závisí na stavu kloubu, věku i zátěži. Konkrétní očekávání s vámi probere lékař na vstupní konzultaci – výsledek léčby nelze předem zaručit.</div>
+        </details>
+        <details>
+          <summary>Co když mám akutní silnou bolest nebo úraz?</summary>
+          <div class="faq-body">Joint Care se věnuje plánované léčbě chronických obtíží. Při akutním úrazu, náhlé silné bolesti či otoku se prosím obraťte na pohotovost nebo svého lékaře.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <h2>Udělejte první krok k životu bez bolesti kloubů</h2>
+        <p>Vyberte si termín vstupní konzultace na pobočce v Praze nebo ve Zlíně. Objednání online zabere jen pár minut.</p>
+        <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a>
+        <a class="btn btn-primary btn-lg" style="margin-left:12px" href="#pobocky">Objednat</a>
+        <p class="sub">Rezervaci potvrdíme e‑mailem · záloha za konzultaci 500 Kč se započítává do ceny léčby</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>Joint Care s.r.o.</h4>
+        <p style="font-size:.93rem">Specializovaná klinika regenerativní medicíny. Neoperační léčba bolesti kloubů a pohybového aparátu.</p>
+        <p class="disclaimer">Informace na tomto webu mají obecný charakter a nenahrazují lékařské vyšetření. O vhodnosti léčby rozhoduje vždy lékař.</p>
+      </div>
+      <div>
+        <h4>Rychlé odkazy</h4>
+        <ul>
+          <li><a href="#sluzba">Léčba</a></li>
+          <li><a href="#prubeh">Jak to probíhá</a></li>
+          <li><a href="#cenik">Ceník</a></li>
+          <li><a href="#faq">Časté dotazy</a></li>
+          <li><a href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client" target="_blank" rel="noopener">Žádost o zákrok</a></li>
+          <li><a href="#pobocky">Objednat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Praha · Zlín</li>
+          <li>Telefon: bude doplněno</li>
+          <li>E‑mail: bude doplněno</li>
+          <li>IČO: bude doplněno</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Joint Care s.r.o. Všechna práva vyhrazena.</span>
+      <span><a href="#">Zásady ochrany osobních údajů (GDPR)</a></span>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
