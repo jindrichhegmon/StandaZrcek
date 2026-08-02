@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joint Care – Regenerativní medicína | Neoperační léčba bolesti kloubů | Praha - &amp; Zlín - SLUŽBU NELZE ZATÍM OBJEDNAT TESTOVACÍ PROVOZ PORTÁLU</title>
-<!-- Joint Care web | verze 2026-08-02.6 | zdroj: github.com/jindrichhegmon/StandaZrcek -->
+<!-- Joint Care web | verze 2026-08-02.7 | zdroj: github.com/jindrichhegmon/StandaZrcek -->
 <link rel="icon" type="image/png" href="img/favicon.png">
-<meta name="version" content="2026-08-02.6">
+<meta name="version" content="2026-08-02.7">
 <meta name="description" content="Joint Care – specializovaná klinika regenerativní medicíny. Neoperační léčba bolesti kloubů a pohybového aparátu. Ultrazvukem navigovaná aplikace kyseliny hyaluronové. Praha | Zlín.">
 <style>
   :root{
@@ -42,10 +42,15 @@
   .btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-size:1rem}
   .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(232,163,61,.35)}
   .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
-  .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+  /* padding sníženo o šířku rámečku, aby měl outline stejnou výšku jako primary */
+  .btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent;padding:10px 24px}
   .btn-outline:hover{background:var(--primary);color:#fff}
   .btn-lg{padding:16px 36px;font-size:1.1rem}
+  .btn-outline.btn-lg{padding:14px 34px}
+  /* jednotná řada tlačítek – nahrazuje inline margin-left mezi tlačítky */
+  .btn-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center}
   .nav .btn{padding:10px 22px;font-size:.95rem}
+  .nav .btn-outline{padding:8px 20px}
   .nav-toggle{display:none}
 
   /* ===== Hero ===== */
@@ -188,6 +193,13 @@
     .grid-3,.grid-2,.steps,.price-grid,.foot-grid{grid-template-columns:1fr}
     h1{font-size:1.9rem}
     section{padding:56px 0}
+
+    /* --- Tlačítka na mobilu: pod sebou, plná šířka, jednotný odstup 12 px --- */
+    .hero-ctas,.btn-row{flex-direction:column;align-items:stretch;gap:12px}
+    .hero-ctas .btn,.btn-row .btn{width:100%;text-align:center;margin-left:0}
+    .price-card .btn,.place .btn{display:block;width:100%;text-align:center}
+    .btn-lg{padding:15px 24px;font-size:1.05rem}
+    .btn-outline.btn-lg{padding:13px 22px}
   }
 
 </style>
@@ -335,9 +347,9 @@
           <p>Zhodnotíme účinek léčby, doporučíme režim a naplánujeme případné další kroky.</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:44px">
+      <div class="btn-row" style="margin-top:44px">
         <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client?url_callback=jointcare-web.netlify.app" target="_blank" rel="noopener">Žádost o zákrok</a>
-        <a class="btn btn-outline btn-lg" style="margin-left:12px" href="#pobocky">Objednat</a>
+        <a class="btn btn-outline btn-lg" href="#pobocky">Objednat</a>
       </div>
     </div>
   </section>
@@ -391,14 +403,14 @@
           <p><strong>Adresa:</strong> bude doplněno</p>
           <p><strong>Telefon:</strong> bude doplněno · <strong>E‑mail:</strong> bude doplněno</p>
           <p><strong>Ordinační hodiny:</strong> dle online kalendáře</p>
-          <a class="btn btn-outline" style="margin-top:10px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e002&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e005" target="_blank" rel="noopener">Objednat v Praze</a>
+          <a class="btn btn-outline" style="margin-top:14px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e002&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e005" target="_blank" rel="noopener">Objednat v Praze</a>
         </div>
         <div class="card place">
           <h3>📍 Joint Care Zlín</h3>
           <p><strong>Adresa:</strong> bude doplněno</p>
           <p><strong>Telefon:</strong> bude doplněno · <strong>E‑mail:</strong> bude doplněno</p>
           <p><strong>Ordinační hodiny:</strong> dle online kalendáře</p>
-          <a class="btn btn-outline" style="margin-top:10px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e003&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006" target="_blank" rel="noopener">Objednat ve Zlíně</a>
+          <a class="btn btn-outline" style="margin-top:14px" href="https://klientkalendar.netlify.app/?ico=1234567890&amp;provozovna=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e003&amp;sluzba=9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006" target="_blank" rel="noopener">Objednat ve Zlíně</a>
         </div>
       </div>
     </div>
@@ -514,8 +526,10 @@
       <div class="cta-band">
         <h2>Udělejte první krok k životu bez bolesti kloubů</h2>
         <p>Vyberte si termín vstupní konzultace na pobočce v Praze nebo ve Zlíně. Objednání online zabere jen pár minut.</p>
-        <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client?url_callback=jointcare-web.netlify.app" target="_blank" rel="noopener">Žádost o zákrok</a>
-        <a class="btn btn-primary btn-lg" style="margin-left:12px" href="#pobocky">Objednat</a>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="https://famicura.cz/anon-new-client/services/9a1e0c5e-1d2b-4f6a-8e3c-a1b2c3d4e006/new-client?url_callback=jointcare-web.netlify.app" target="_blank" rel="noopener">Žádost o zákrok</a>
+          <a class="btn btn-primary btn-lg" href="#pobocky">Objednat</a>
+        </div>
         <p class="sub">Rezervaci potvrdíme e‑mailem · záloha za konzultaci 500 Kč se započítává do ceny léčby</p>
       </div>
     </div>
@@ -554,7 +568,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Joint Care s.r.o. Všechna práva vyhrazena. <span style="opacity:.55">· verze 2026-08-02.6</span></span>
+      <span>© 2026 Joint Care s.r.o. Všechna práva vyhrazena. <span style="opacity:.55">· verze 2026-08-02.7</span></span>
       <span><a href="#">Zásady ochrany osobních údajů (GDPR)</a></span>
     </div>
   </div>
@@ -562,6 +576,6 @@
 
 
 
-<script>console.log("Joint Care web — verze 2026-08-02.6");</script>
+<script>console.log("Joint Care web — verze 2026-08-02.7");</script>
 </body>
 </html>
